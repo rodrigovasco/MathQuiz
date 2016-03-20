@@ -3,27 +3,35 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#00BFA5</item>
+        <item name="colorPrimaryDark">#00897B</item>
+        <item name="colorAccent">#F57C00</item>
     </style>
 
     <style name="PlayerTextStyle">
         <!-- Style for a player TextView-->
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
         <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="HeaderTextStyle">
         <!-- Style for a header TextView-->
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#009688</item>
+        <item name="android:background">#C5E1A5</item>
     </style>
 
     <style name="NumericValueTextStyle">
@@ -31,15 +39,39 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">italic</item>
+        <item name="android:textStyle">italic|bold</item>
+        <item name="android:textColor">#1B5E20</item>
     </style>
 
     <style name="OperatorTextStyle">
         <!-- Style for a a operator TextView-->
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#1B5E20</item>
+    </style>
+
+    <style name="NumericValueEditTextStyle">
+    <!-- Style for a numeric value EditText-->
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">22sp</item>
+    <item name="android:textStyle">italic|bold</item>
+    <item name="android:inputType">numberSigned|numberDecimal</item>
+    </style>
+
+    <style name="ResultsTextStyle">
+        <!-- Style for a numeric value TextView-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">italic|bold</item>
+        <item name="android:textColor">#1B5E20</item>
     </style>
 
 </resources>

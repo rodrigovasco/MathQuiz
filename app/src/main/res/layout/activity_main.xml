@@ -2,181 +2,403 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF8E1"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.mathquiz.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/player1_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Player 1"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/player1_name"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name" />
-
-        <CheckBox
-            android:id="@+id/player1_ready"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="randomNumbers"
-            android:paddingLeft="6dp"
-            android:text="Ready!" />
-
-        <TextView
-            style="@style/HeaderTextStyle"
-            android:text="Sum" />
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/paper_notebook" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/sum_1st_field_textview"
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/sum_operator_textview"
-                style="@style/OperatorTextStyle"
-                android:text=" + " />
+                <!-- Player 1 -->
 
-            <TextView
-                android:id="@+id/sum_2nd_field_textview"
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/equal_operator_textview"
-                style="@style/OperatorTextStyle"
-                android:text=" = " />
+                    <TextView
+                        style="@style/PlayerTextStyle"
+                        android:text="Player 1"
+                        android:background="#B2EBF2"
+                        android:textColor="#1A237E" />
 
-            <EditText
-                android:id="@+id/sum_answer_edittext"
-                style="@style/NumericValueTextStyle"
-                android:hint=" ? " />
+                    <EditText
+                        android:id="@+id/player1_name_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:hint="Name"
+                        android:inputType="textCapWords"
+                        android:singleLine="true" />
+
+                    <CheckBox
+                        android:id="@+id/player1_ready_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:onClick="preparePlayer1"
+                        android:paddingLeft="6dp"
+                        android:text="Ready!"
+                        android:textColor="#3949AB"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Sum" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player1_sum_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" + " />
+
+                        <TextView
+                            android:id="@+id/player1_sum_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player1_sum_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Subtraction" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player1_subt_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" - " />
+
+                        <TextView
+                            android:id="@+id/player1_subt_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player1_subt_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Multiplication" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player1_mult_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" x " />
+
+                        <TextView
+                            android:id="@+id/player1_mult_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player1_mult_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Division" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player1_div_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" : " />
+
+                        <TextView
+                            android:id="@+id/player1_div_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player1_div_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="8dp"
+                    android:background="#F57C00" />
+
+                <!-- Player 2 -->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/PlayerTextStyle"
+                        android:text="Player 2"
+                        android:textColor="#D50000"
+                        android:background="#FFCDD2"/>
+
+                    <EditText
+                        android:id="@+id/player2_name_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="Name"
+                        android:inputType="textCapWords"
+                        android:singleLine="true" />
+
+                    <CheckBox
+                        android:id="@+id/player2_ready_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:onClick="preparePlayer2"
+                        android:paddingLeft="6dp"
+                        android:text="Ready!"
+                        android:textColor="#C62828"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Sum" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player2_sum_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" + " />
+
+                        <TextView
+                            android:id="@+id/player2_sum_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player2_sum_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Subtraction" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player2_subt_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" - " />
+
+                        <TextView
+                            android:id="@+id/player2_subt_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player2_subt_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Multiplication" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player2_mult_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" x " />
+
+                        <TextView
+                            android:id="@+id/player2_mult_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player2_mult_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:text="Division" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/player2_div_1st_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" : " />
+
+                        <TextView
+                            android:id="@+id/player2_div_2nd_field_textview"
+                            style="@style/NumericValueTextStyle"
+                            android:text=" _ " />
+
+                        <TextView
+                            style="@style/OperatorTextStyle"
+                            android:text=" = " />
+
+                        <EditText
+                            android:id="@+id/player2_div_answer_edittext"
+                            style="@style/NumericValueEditTextStyle"
+                            android:hint=" ? " />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:background="#FFAB00"
+                android:textColor="#E65100"
+                android:onClick="showQuizResults"
+                android:text="Results"
+                android:textStyle="bold"/>
+
         </LinearLayout>
 
-        <TextView
-            style="@style/HeaderTextStyle"
-            android:text="Subtraction" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
-
-            <TextView
-                style="@style/OperatorTextStyle"
-                android:text=" - " />
-
-            <TextView
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
-
-            <TextView
-                style="@style/OperatorTextStyle"
-                android:text=" = " />
-
-            <EditText
-                style="@style/NumericValueTextStyle"
-                android:hint=" ? " />
-        </LinearLayout>
-
-        <TextView
-            style="@style/HeaderTextStyle"
-            android:text="Multiplication" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
-
-            <TextView
-                style="@style/OperatorTextStyle"
-                android:text=" x " />
-
-            <TextView
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
-
-            <TextView
-                style="@style/OperatorTextStyle"
-                android:text=" = " />
-
-            <EditText
-                style="@style/NumericValueTextStyle"
-                android:hint=" ? " />
-        </LinearLayout>
-
-        <TextView
-            style="@style/HeaderTextStyle"
-            android:text="Division" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
-
-            <TextView
-                style="@style/OperatorTextStyle"
-                android:text=" : " />
-
-            <TextView
-                style="@style/NumericValueTextStyle"
-                android:text=" _ " />
-
-            <TextView
-                style="@style/OperatorTextStyle"
-                android:text=" = " />
-
-            <EditText
-                style="@style/NumericValueTextStyle"
-                android:hint=" ? " />
-        </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="showQuizResults"
-            android:text="Results" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Restart" />
-    </LinearLayout>
-
-
+    </RelativeLayout>
 </ScrollView>
